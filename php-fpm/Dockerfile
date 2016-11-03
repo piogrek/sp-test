@@ -40,11 +40,11 @@ ADD symfony.ini /etc/php5/cli/conf.d/
 
 ADD symfony.pool.conf /etc/php5/fpm.d/
 
-CMD ["php-fpm", "-F"]
-
-EXPOSE 9000
-
 WORKDIR /var/www/symfony
 VOLUME ["/var/www/symfony"]
 CMD ["composer", "install"]
 
+CMD ["php-fpm", "-F"]
+
+EXPOSE 9000
+EXPOSE 9001
