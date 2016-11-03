@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb12d978-b75f-4892-b83b-e7166ffe2ab0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/symfony/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony/src/AppBundle/Resources/views/Email/getEmails.html.twig" afterPath="$PROJECT_DIR$/symfony/src/AppBundle/Resources/views/Email/getEmails.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony/web/app.php" afterPath="$PROJECT_DIR$/symfony/web/app.php" />
     </list>
     <ignored path="sp-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,7 +100,6 @@
         <option value="$PROJECT_DIR$/symfony/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/symfony/app/config/parameters.yml.dist" />
         <option value="$PROJECT_DIR$/symfony/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/symfony/web/app.php" />
         <option value="$PROJECT_DIR$/symfony/src/AppBundle/Repository/views/Api/newEmail.html.twig" />
         <option value="$PROJECT_DIR$/symfony/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/symfony/src/AppBundle/Controller/ApiController.php" />
@@ -118,6 +115,7 @@
         <option value="$PROJECT_DIR$/php-fpm/start.sh" />
         <option value="$PROJECT_DIR$/symfony/src/AppBundle/Resources/views/Email/getEmails.html.twig" />
         <option value="$PROJECT_DIR$/symfony/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/symfony/web/app.php" />
       </list>
     </option>
   </component>
@@ -188,6 +186,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sp-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sp-test" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,12 +395,12 @@
       <workItem from="1478107312839" duration="3469000" />
       <workItem from="1478127377725" duration="12144000" />
       <workItem from="1478147757357" duration="6951000" />
-      <workItem from="1478166798974" duration="6098000" />
+      <workItem from="1478166798974" duration="6153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28662000" />
+    <option name="totallyTimeSpent" value="28717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -636,16 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/web/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="e#7#52#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/symfony/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -784,6 +790,14 @@
           <folding>
             <element signature="e#2275#2299#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/web/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
