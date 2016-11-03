@@ -1,0 +1,14 @@
+[
+  {
+    "from": "piogrek@gmail.com",
+    "to": "piogrek+to@gmail.com",
+    "subject": "test1",
+    "message": "test 1 body"
+  },
+  {
+    "from": "piogrek+2@gmail.com",
+    "to": "piogrek+to2@gmail.com",
+    "subject": "test2",
+    "message": "test 2 body"
+  }
+]

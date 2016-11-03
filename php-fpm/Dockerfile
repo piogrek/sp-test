@@ -2,9 +2,8 @@ FROM alpine:3.4
 
 MAINTAINER Vincent Composieux <vincent.composieux@gmail.com>
 
-
-
 RUN apk add --update \
+git\
     php5-fpm \
         php5-apcu \
         php5-curl \
@@ -31,20 +30,24 @@ RUN apk add --update \
 
 RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
-RUN apk add --update curl
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
 
 ADD symfony.ini /etc/php5/fpm/conf.d/
 ADD symfony.ini /etc/php5/cli/conf.d/
 
 ADD symfony.pool.conf /etc/php5/fpm.d/
+ADD start.sh /var/www/
+RUN chmod +x /var/www/start.sh
 
-CMD ["php-fpm", "-F"]
+#CMD ["php-fpm", "-F"]
+
+RUN apk add --update curl
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+#WORKDIR "/var/www/symfony"
+#VOLUME ["/var/www/symfony"]
+CMD ["/var/www/start.sh"]
+#ENTRYPOINT ["/var/www/start.sh"]
 
 EXPOSE 9001
 
-WORKDIR "/var/www/symfony"
-VOLUME ["/var/www/symfony"]
-CMD ["composer", "install"]
 

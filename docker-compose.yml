@@ -9,24 +9,24 @@ services:
             MYSQL_DATABASE: symfony
             MYSQL_USER: symfony
             MYSQL_PASSWORD: symfony
-    php:
+    phpfpm:
         build: ./php-fpm
-        image: bravissimolabs/alpine-git
         expose:
-            - "9000"
+            - "9001"
         volumes:
             - ./symfony:/var/www/symfony
             - ./logs/symfony:/var/www/symfony/app/logs
         links:
             - db
+            - smtp
     nginx:
         build: ./nginx
         ports:
             - "80:80"
         links:
-            - php
+            - phpfpm
         volumes_from:
-            - php
+            - phpfpm
         volumes:
             - ./logs/nginx/:/var/log/nginx
     elk:
@@ -37,5 +37,21 @@ services:
             - ./elk/logstash:/etc/logstash
             - ./elk/logstash/patterns:/opt/logstash/patterns
         volumes_from:
-            - php
+            - phpfpm
             - nginx
+
+    smtp:
+      image: namshi/smtp
+      ports:
+       - "25:25"
+      environment:
+        GMAIL_USER:
+        GMAIL_PASSWORD:
+        SES_USER:
+        SES_PASSWORD:
+        SES_REGION:
+        RELAY_NETWORKS:
+        RELAY_DOMAINS:
+        KEY_PATH:
+        CERTIFICATE_PATH:
+        MAILNAME:
