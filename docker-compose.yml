@@ -11,6 +11,7 @@ services:
             MYSQL_PASSWORD: symfony
     php:
         build: ./php-fpm
+        image: bravissimolabs/alpine-git
         expose:
             - "9000"
         volumes:
