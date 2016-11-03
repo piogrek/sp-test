@@ -24,7 +24,20 @@
     <hr>
     <h2>Send</h2>
     <form enctype='application/json' action="{{ path('post_emails') }}" method="POST">
-        <textarea class="form-control" name="json"></textarea>
+        <textarea class="form-control" name="json">[
+{
+"from": "…",
+"to": "…",
+"subject": "…",
+"message": "…"
+},
+{
+"from": "…",
+"to": "…",
+"subject": "…",
+"message": "…"
+}
+]</textarea>
         <button class="btn btn-primary" type="submit">Submit Json</button>
     </form>
 {% endblock %}
