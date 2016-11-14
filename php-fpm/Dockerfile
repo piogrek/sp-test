@@ -1,53 +1,18 @@
-FROM alpine:3.4
-
-MAINTAINER Vincent Composieux <vincent.composieux@gmail.com>
-
-RUN apk add --update \
-git\
-    php5-fpm \
-        php5-apcu \
-        php5-curl \
-        php5-gd \
-        php5-cli \
-        php5-ctype \
-        php5-iconv \
-        php5-imagick \
-        php5-json \
-        php5-intl \
-        php5-mcrypt \
-        php5-mysql \
-        php5-opcache \
-        php5-openssl \
-        php5-pdo \
-        php5-pdo_mysql \
-        php5-common \
-        php5-dev \
-        php5-mysqli \
-        php5-phar \
-        php5-xml \
-        php5-dom \
-        php5-zlib
-
-RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*
+FROM php:7.0-cli
 
 
-ADD symfony.ini /etc/php5/fpm/conf.d/
-ADD symfony.ini /etc/php5/cli/conf.d/
 
-ADD symfony.pool.conf /etc/php5/fpm.d/
 ADD start.sh /var/www/
 RUN chmod +x /var/www/start.sh
 
-#CMD ["php-fpm", "-F"]
-
-RUN apk add --update curl
+RUN apt-get update
+#RUN apt-get install curl
+#RUN apk add --update curl
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-#WORKDIR "/var/www/symfony"
+WORKDIR "/var/www/symfony"
 #VOLUME ["/var/www/symfony"]
-CMD ["/var/www/start.sh"]
-#ENTRYPOINT ["/var/www/start.sh"]
-
-EXPOSE 9001
-
+#CMD ["/var/www/start.sh"]
+ENTRYPOINT ["/var/www/start.sh"]
 

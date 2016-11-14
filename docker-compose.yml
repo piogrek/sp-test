@@ -11,35 +11,14 @@ services:
             MYSQL_PASSWORD: symfony
     phpfpm:
         build: ./php-fpm
-        expose:
-            - "9001"
+        ports:
+            - "8081:8081"
         volumes:
             - ./symfony:/var/www/symfony
             - ./logs/symfony:/var/www/symfony/app/logs
         links:
             - db
             - smtp
-    nginx:
-        build: ./nginx
-        ports:
-            - "80:80"
-        links:
-            - phpfpm
-        volumes_from:
-            - phpfpm
-        volumes:
-            - ./logs/nginx/:/var/log/nginx
-    elk:
-        image: willdurand/elk
-        ports:
-            - "81:80"
-        volumes:
-            - ./elk/logstash:/etc/logstash
-            - ./elk/logstash/patterns:/opt/logstash/patterns
-        volumes_from:
-            - phpfpm
-            - nginx
-
     smtp:
       image: namshi/smtp
       ports:
